@@ -30,7 +30,7 @@ export function buildSuggestions(
   const unmatchedStepTexts = new Set(stepTexts)
   for (const expression of expressions) {
     for (const text of stepTexts) {
-      const args = expression.match(text)
+      const args = expression.match(text.text)
       if (args) {
         const parameterTypes = args.map((arg) => arg.getParameterType())
         for (let argIndex = 0; argIndex < args.length; argIndex++) {
@@ -70,8 +70,9 @@ export function buildSuggestions(
 
   for (const stepText of unmatchedStepTexts) {
     suggestions.push({
-      label: stepText,
-      segments: [stepText],
+      label: stepText.text,
+      type: stepText.type,
+      segments: [stepText.text],
       matched: false,
     })
   }
