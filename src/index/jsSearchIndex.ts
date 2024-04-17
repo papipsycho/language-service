@@ -9,22 +9,68 @@ type Doc = {
 }
 
 export function jsSearchIndex(suggestions: readonly Suggestion[]): Index {
-  const docs: Doc[] = suggestions.map((suggestion, id) => {
+  /*const docsWhen: Doc[] = suggestions.map((suggestion, id) => {
     return {
       id,
       text: suggestion.segments
         .map((segment) => (typeof segment === 'string' ? segment : segment.join(' ')))
         .join(''),
     }
-  })
+  })*/
 
-  const search = new Search('id')
-  search.addIndex('text')
-  search.addDocuments(docs)
+  var docsWhen = [];
+  var docsGiven = [];
+  var docsThen = [];
+  for(var i = 0, l = suggestions.length; i<l; i++) {
+    switch(suggestions[i].type) {
+      case 'when':
+          docsWhen.push({
+            id: i,
+            text: suggestions[i].segments.map((segment) => (typeof segment === 'string' ? segment : segment.join(' '))).join(''),
+          });
+        break
+      case 'given':
+        docsGiven.push({
+            id: i,
+            text: suggestions[i].segments.map((segment) => (typeof segment === 'string' ? segment : segment.join(' '))).join(''),
+          });
+        break;
+      case 'then':
+      docsThen.push({
+            id: i,
+            text: suggestions[i].segments.map((segment) => (typeof segment === 'string' ? segment : segment.join(' '))).join(''),
+          });
+        break;
+    }
+  }
+  
 
-  return (text) => {
+  const searchWhen = new Search('when')
+  searchWhen.addIndex('text')
+  searchWhen.addDocuments(docsWhen)
+
+  const searchGiven = new Search('given')
+  searchGiven.addIndex('text')
+  searchGiven.addDocuments(docs)
+
+  const searchThen = new Search('then')
+  searchThen.addIndex('text')
+  searchThen.addDocuments(docs)
+
+  return (text, keyword) => {
     if (!text) return []
-    const results = search.search(text)
+    var results;
+    switch(keyword.trim().toLowerCase()) {
+      case "when":
+        results = searchWhen.search(text);
+        break;
+      case "given":
+        results = searchGiven.search(text);
+        break;
+      case "then":
+        results = searchThen.search(text);
+        break;
+    }
     return results.map((result: Doc) => suggestions[result.id])
   }
 }
