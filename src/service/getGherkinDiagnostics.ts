@@ -9,7 +9,8 @@ import { diagnosticCodeUndefinedStep } from './constants.js'
 // https://microsoft.github.io/language-server-protocol/specifications/specification-3-17/#diagnostic
 export function getGherkinDiagnostics(
   gherkinSource: string,
-  expressions: readonly Expression[]
+  expressions: readonly Expression[],
+  enableStepSearch = true
 ): Diagnostic[] {
   const lines = gherkinSource.split(/\r?\n/)
   const { gherkinDocument, error } = parseGherkinDocument(gherkinSource)
@@ -62,7 +63,7 @@ export function getGherkinDiagnostics(
         snippetKeyword = step.keyword
       }
 
-      if (isUndefined(step.text, expressions) && step.location.column !== undefined) {
+      if (enableStepSearch && isUndefined(step.text, expressions) && step.location.column !== undefined) {
         const line = step.location.line - 1
         const character = step.location.column - 1 + step.keyword.length
         const diagnostic: Diagnostic = makeUndefinedStepDiagnostic(
