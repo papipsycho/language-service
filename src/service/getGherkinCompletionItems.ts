@@ -17,7 +17,7 @@ export function getGherkinCompletionItems(
 ): readonly CompletionItem[] {
   const stepRange = getStepRange(gherkinSource, position)
   if (!stepRange) return []
-  const suggestions = index(stepRange.stepText)
+  const suggestions = index(stepRange.stepText, stepRange.stepKeyword)
   // https://github.com/microsoft/language-server-protocol/issues/898#issuecomment-593968008
   return suggestions.map((suggestion, i) => {
     // The index has already sorted the syggestions by match score.
