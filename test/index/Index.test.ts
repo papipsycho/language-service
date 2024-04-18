@@ -71,6 +71,7 @@ function verifyIndexContract(name: string, buildIndex: BuildIndex) {
                 return {
                   label: sentence,
                   segments: [sentence],
+                  type: 'when',
                   matched: false,
                 }
               })
