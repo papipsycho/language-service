@@ -16,6 +16,7 @@ describe('buildSuggestionsFromRegularExpression', () => {
       segments: ['I have 4 cukes'],
       label: 'I have 4 cukes',
       matched: true,
+      type: 'when'
     }
     const actual = buildSuggestionsFromRegularExpression(
       expression,
