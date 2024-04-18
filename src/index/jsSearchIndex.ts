@@ -59,7 +59,7 @@ export function jsSearchIndex(suggestions: readonly Suggestion[]): Index {
 
   return (text, keyword) => {
     if (!text) return []
-    var results;
+    var results = [];
     switch(keyword.trim().toLowerCase()) {
       case "when":
         results = searchWhen.search(text);
