@@ -1,3 +1,4 @@
+/*
 import { NdjsonToMessageStream } from '@cucumber/message-streams'
 import assert from 'assert'
 import fs from 'fs'
@@ -9,7 +10,7 @@ import { Suggestion } from '../../src/suggestions/types.js'
 import { MessagesBuilderStream } from './MessagesBuilderStream.js'
 
 const pipeline = promisify(pipelineCb)
-/*
+
 describe('MessagesBuilder', () => {
   it('does not fail on duplicate parameter types', async () => {
     const readStream = fs.createReadStream(`test/messages/dupe-parameter-types.ndjson`, 'utf-8')
