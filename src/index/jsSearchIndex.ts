@@ -51,11 +51,11 @@ export function jsSearchIndex(suggestions: readonly Suggestion[]): Index {
 
   const searchGiven = new Search('given')
   searchGiven.addIndex('text')
-  searchGiven.addDocuments(docs)
+  searchGiven.addDocuments(docsGiven)
 
   const searchThen = new Search('then')
   searchThen.addIndex('text')
-  searchThen.addDocuments(docs)
+  searchThen.addDocuments(docsThen)
 
   return (text, keyword) => {
     if (!text) return []
