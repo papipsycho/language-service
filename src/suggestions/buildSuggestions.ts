@@ -20,7 +20,7 @@ import { Suggestion } from './types.js'
  */
 export function buildSuggestions(
   registry: ParameterTypeRegistry,
-  stepTexts: readonly string[],
+  stepTexts: readonly any[],
   expressions: readonly Expression[],
   maxChoices = 10
 ): readonly Suggestion[] {
