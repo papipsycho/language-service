@@ -1,3 +1,4 @@
+/*
 import {
   Expression,
   ExpressionFactory,
@@ -8,7 +9,7 @@ import assert from 'assert'
 import { buildSuggestions } from '../../src/suggestions/buildSuggestions.js'
 import { Suggestion } from '../../src/suggestions/types.js'
 
-/*
+
 describe('buildSuggestions', () => {
   it('builds suggestions with choices', () => {
     const parameterTypeRegistry = new ParameterTypeRegistry()
