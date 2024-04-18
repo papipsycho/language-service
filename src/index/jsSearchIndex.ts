@@ -57,18 +57,19 @@ export function jsSearchIndex(suggestions: readonly Suggestion[]): Index {
   searchThen.addIndex('text')
   searchThen.addDocuments(docsThen)
 
-  return (text: string, keyword: string) => {
+  return (text: string) => {
     if (!text) return []
     var results = [];
+    var keyword = text.split(" ", 1)[0];
     switch(keyword.trim().toLowerCase()) {
       case "when":
-        results = searchWhen.search(text);
+        results = searchWhen.search(text.substr(5));
         break;
       case "given":
-        results = searchGiven.search(text);
+        results = searchGiven.search(text.substr(6));
         break;
       case "then":
-        results = searchThen.search(text);
+        results = searchThen.search(text.substr(5));
         break;
     }
     return results.map((result: Doc) => suggestions[result.id])
