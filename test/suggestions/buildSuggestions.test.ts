@@ -24,11 +24,13 @@ describe('buildSuggestions', () => {
           label: 'The {word} boat',
           segments: ['The ', ['big', 'nice'], ' boat'],
           matched: true,
+          type: 'when'
         },
         {
           label: 'The {word} song',
           segments: ['The ', ['big', 'nice'], ' song'],
           matched: true,
+          type: 'when'
         },
       ]
     )
@@ -58,6 +60,7 @@ describe('buildSuggestions', () => {
             ['basket', 'belly', 'table'],
           ],
           matched: true,
+          type: 'when'
         },
       ]
     )
@@ -76,6 +79,7 @@ describe('buildSuggestions', () => {
           label: 'I have (\\d\\d) cukes in my "(belly|suitcase)"',
           segments: ['I have ', ['42', '54'], ' cukes in my "', ['belly', 'suitcase'], '"'],
           matched: true,
+          type: 'when'
         },
       ]
     )
@@ -94,6 +98,7 @@ describe('buildSuggestions', () => {
           label: '^the price of a "(.*?)" is (\\d+)c$',
           segments: ['the price of a "', ['lemon', 'pear'], '" is ', ['...'], 'c'],
           matched: true,
+          type: 'when'
         },
       ]
     )
@@ -117,6 +122,7 @@ describe('buildSuggestions', () => {
           label: 'I have {int} cukes in/on my {word}',
           segments: ['I have ', ['42', '54'], ' cukes ', ['in', 'on'], ' my ', ['basket', 'belly']],
           matched: true,
+          type: 'when'
         },
       ],
       2
@@ -139,16 +145,19 @@ describe('buildSuggestions', () => {
           label: 'I have 42 cukes in my belly',
           segments: ['I have 42 cukes in my belly'],
           matched: false,
+          type: 'when'
         },
         {
           label: 'I have 54 cukes in my basket',
           segments: ['I have 54 cukes in my basket'],
           matched: false,
+          type: 'when'
         },
         {
           label: 'I have 54 cukes on my table',
           segments: ['I have 54 cukes on my table'],
           matched: false,
+          type: 'when'
         },
       ]
     )
