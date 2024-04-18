@@ -18,10 +18,10 @@ export function jsSearchIndex(suggestions: readonly Suggestion[]): Index {
     }
   })*/
 
-  var docsWhen = [];
-  var docsGiven = [];
-  var docsThen = [];
-  for(var i = 0, l = suggestions.length; i<l; i++) {
+  let docsWhen = []
+  let docsGiven = []
+  let docsThen = []
+  for(let i = 0, l = suggestions.length; i<l; i++) {
     switch(suggestions[i].type) {
       case 'when':
           docsWhen.push({
