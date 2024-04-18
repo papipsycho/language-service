@@ -8,7 +8,7 @@ import {
 import { buildSuggestionFromCucumberExpression } from './buildSuggestionFromCucumberExpression.js'
 import { buildSuggestionsFromRegularExpression } from './buildSuggestionsFromRegularExpression.js'
 import { makeKey } from './helpers.js'
-import { Suggestion } from './types.js'
+import { Suggestion, Step } from './types.js'
 
 /**
  * Builds an array of {@link Suggestion} from steps and step definitions.
@@ -20,7 +20,7 @@ import { Suggestion } from './types.js'
  */
 export function buildSuggestions(
   registry: ParameterTypeRegistry,
-  stepTexts: readonly Object[],
+  stepTexts: readonly Step[],
   expressions: readonly Expression[],
   maxChoices = 10
 ): readonly Suggestion[] {
