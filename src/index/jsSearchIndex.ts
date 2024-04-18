@@ -34,16 +34,16 @@ export function jsSearchIndex(suggestions: readonly Suggestion[]): Index {
           id: i,
           text: suggestions[i].segments.map((segment) => (typeof segment === 'string' ? segment : segment.join(' '))).join('')
         })
-        break;
+        break
       case 'then':
         docsThen.push({
           id: i,
           text: suggestions[i].segments.map((segment) => (typeof segment === 'string' ? segment : segment.join(' '))).join('')
         })
-        break;
+        break
     }
   }
-  
+
 
   const searchWhen = new Search('when')
   searchWhen.addIndex('text')
@@ -59,17 +59,17 @@ export function jsSearchIndex(suggestions: readonly Suggestion[]): Index {
 
   return (text: string) => {
     if (!text) return []
-    var results: any[] = [];
-    var keyword = text.split(" ", 1)[0];
+    let results: any[] = []
+    let keyword = text.split(" ", 1)[0]
     switch(keyword.trim().toLowerCase()) {
       case "when":
-        results = searchWhen.search(text.substr(5));
+        results = searchWhen.search(text.substr(5))
         break;
       case "given":
-        results = searchGiven.search(text.substr(6));
+        results = searchGiven.search(text.substr(6))
         break;
       case "then":
-        results = searchThen.search(text.substr(5));
+        results = searchThen.search(text.substr(5))
         break;
     }
     return results.map((result: Doc) => suggestions[result.id])
