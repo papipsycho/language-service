@@ -63,7 +63,11 @@ export function getGherkinDiagnostics(
         snippetKeyword = step.keyword
       }
 
-      if (enableStepSearch && isUndefined(step.text, expressions) && step.location.column !== undefined) {
+      if (
+        enableStepSearch &&
+        isUndefined(step.text, expressions) &&
+        step.location.column !== undefined
+      ) {
         const line = step.location.line - 1
         const character = step.location.column - 1 + step.keyword.length
         const diagnostic: Diagnostic = makeUndefinedStepDiagnostic(
