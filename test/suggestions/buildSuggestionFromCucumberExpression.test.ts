@@ -20,7 +20,7 @@ describe('buildSuggestionFromCucumberExpression', () => {
       segments: ['I have 4 cukes'],
       label: 'I have 4 cukes',
       matched: true,
-      type: 'when'
+      type: 'when',
     }
     const actual = buildSuggestionFromCucumberExpression(expression, registry, {})
     assert.deepStrictEqual(actual, expected)
@@ -32,7 +32,7 @@ describe('buildSuggestionFromCucumberExpression', () => {
       segments: ['I have ', ['4', '5'], ' cukes'],
       label: 'I have 4/5 cukes',
       matched: true,
-      type: 'when'
+      type: 'when',
     }
     const actual = buildSuggestionFromCucumberExpression(expression, registry, {})
     assert.deepStrictEqual(actual, expected)
@@ -44,7 +44,7 @@ describe('buildSuggestionFromCucumberExpression', () => {
       segments: ['I have 1 ', ['cuke', 'cukes']],
       label: 'I have 1 cuke(s)',
       matched: true,
-      type: 'when'
+      type: 'when',
     }
     const actual = buildSuggestionFromCucumberExpression(expression, registry, {})
     assert.deepStrictEqual(actual, expected)
@@ -56,7 +56,7 @@ describe('buildSuggestionFromCucumberExpression', () => {
       segments: ['he went to  the hospital'],
       label: 'he went to  (the )hospital',
       matched: true,
-      type: 'when'
+      type: 'when',
     }
     const actual = buildSuggestionFromCucumberExpression(expression, registry, {})
     assert.deepStrictEqual(actual, expected)
@@ -68,7 +68,7 @@ describe('buildSuggestionFromCucumberExpression', () => {
       segments: ['I have ', ['12', '17'], ' cukes'],
       label: 'I have {int} cukes',
       matched: true,
-      type: 'when'
+      type: 'when',
     }
     const actual = buildSuggestionFromCucumberExpression(expression, registry, {
       int: ['12', '17'],
@@ -82,7 +82,7 @@ describe('buildSuggestionFromCucumberExpression', () => {
       segments: ['I have ', ['0'], ' cukes'],
       label: 'I have {int} cukes',
       matched: true,
-      type: 'when'
+      type: 'when',
     }
     const actual = buildSuggestionFromCucumberExpression(expression, registry, {})
     assert.deepStrictEqual(actual, expected)
@@ -94,7 +94,7 @@ describe('buildSuggestionFromCucumberExpression', () => {
       segments: [['me', 'you']],
       label: 'me/you',
       matched: true,
-      type: 'when'
+      type: 'when',
     }
     const actual = buildSuggestionFromCucumberExpression(expression, registry, {})
     assert.deepStrictEqual(actual, expected)
@@ -128,7 +128,7 @@ describe('buildSuggestionFromCucumberExpression', () => {
       segments: ['I have some ', ['prefab', 'audio', 'image', 'spine', 'atlas'], 's'],
       label: 'I have some {assetType}(s)',
       matched: true,
-      type: 'when'
+      type: 'when',
     }
     assert.deepStrictEqual(actual, expected)
   })
@@ -139,7 +139,7 @@ describe('buildSuggestionFromCucumberExpression', () => {
       segments: ['I have ', ['12'], ' ', ['cuke', 'cukes'], ' in my ', ['bag', 'belly']],
       label: 'I have {int} cuke(s) in my bag/belly',
       matched: true,
-      type: 'when'
+      type: 'when',
     }
     const actual = buildSuggestionFromCucumberExpression(expression, registry, {
       int: ['12'],
