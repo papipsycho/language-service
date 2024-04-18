@@ -21,6 +21,7 @@ export function buildSuggestionFromCucumberExpression(
       label: expression.source,
       segments,
       matched: true,
+      type: 'when'
     }
   } catch (err) {
     err.message += `
