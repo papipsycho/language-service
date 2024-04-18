@@ -3,8 +3,7 @@ export type Suggestion = Readonly<{
    * The value that is presented to users in an autocomplete.
    */
   label: string
-
-
+  
   type: string
 
   /**
