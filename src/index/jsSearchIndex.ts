@@ -21,25 +21,25 @@ export function jsSearchIndex(suggestions: readonly Suggestion[]): Index {
   const docsWhen = []
   const docsGiven = []
   const docsThen = []
-  for(let i = 0, l = suggestions.length; i < l; i++) {
-    switch(suggestions[i].type) {
+  for (let i = 0, l = suggestions.length; i < l; i++) {
+    switch (suggestions[i].type) {
       case 'when':
         docsWhen.push({
           id: i,
-          text: suggestions[i].segments.map((segment) => (typeof segment === 'string' ? segment : segment.join(' '))).join(''),
-        });
+          text: suggestions[i].segments.map((segment) => (typeof segment === 'string' ? segment : segment.join(' '))).join('')
+        })
         break
       case 'given':
         docsGiven.push({
           id: i,
-          text: suggestions[i].segments.map((segment) => (typeof segment === 'string' ? segment : segment.join(' '))).join(''),
-        });
+          text: suggestions[i].segments.map((segment) => (typeof segment === 'string' ? segment : segment.join(' '))).join('')
+        })
         break;
       case 'then':
         docsThen.push({
           id: i,
-          text: suggestions[i].segments.map((segment) => (typeof segment === 'string' ? segment : segment.join(' '))).join(''),
-          });
+          text: suggestions[i].segments.map((segment) => (typeof segment === 'string' ? segment : segment.join(' '))).join('')
+        })
         break;
     }
   }
