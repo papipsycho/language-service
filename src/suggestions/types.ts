@@ -21,6 +21,15 @@ export type Suggestion = Readonly<{
   matched: boolean
 }>
 
+export type Step = Readonly<{
+  /**
+   * The value that is presented to users in an autocomplete.
+   */
+  text: string
+
+  type: string
+}>
+
 export type SuggestionSegments = readonly SuggestionSegment[]
 export type SuggestionSegment = Text | Choices
 type Text = string
