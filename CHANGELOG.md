@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [10.6.0] - 2024-04018
+### Added
+- fork
+- added the possibility to not checking the step definition
+- split the js by when, then, given
+
 ## [1.5.0] - 2024-04-08
 ### Added
 - (Python) Support for u-strings with step definition patterns ([#173](https://github.com/cucumber/language-service/pull/173))
