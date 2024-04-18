@@ -18,9 +18,9 @@ export function jsSearchIndex(suggestions: readonly Suggestion[]): Index {
     }
   })*/
 
-  let docsWhen = []
-  let docsGiven = []
-  let docsThen = []
+  const docsWhen = []
+  const docsGiven = []
+  const docsThen = []
   for(let i = 0, l = suggestions.length; i<l; i++) {
     switch(suggestions[i].type) {
       case 'when':
