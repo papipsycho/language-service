@@ -57,7 +57,7 @@ export function jsSearchIndex(suggestions: readonly Suggestion[]): Index {
   searchThen.addIndex('text')
   searchThen.addDocuments(docsThen)
 
-  return (text, keyword) => {
+  return (text: string, keyword: string) => {
     if (!text) return []
     var results = [];
     switch(keyword.trim().toLowerCase()) {
