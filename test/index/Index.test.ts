@@ -12,17 +12,20 @@ function verifyIndexContract(name: string, buildIndex: BuildIndex) {
       const s1: Suggestion = {
         label: 'I have {int} cukes in my belly',
         segments: ['I have ', ['42', '98'], ' cukes in my belly'],
+        type: 'when',
         matched: true,
       }
       const s2: Suggestion = {
         label: 'I am a teapot',
         segments: ['I am a teapot'],
+        type: 'when',
         matched: true,
       }
 
       const s3: Suggestion = {
         label: '{word} can do it',
         segments: [['You', 'They'], 'can do it'],
+        type: 'when',
         matched: true,
       }
       let index: Index
