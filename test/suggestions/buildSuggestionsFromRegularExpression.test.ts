@@ -33,7 +33,7 @@ describe('buildSuggestionsFromRegularExpression', () => {
       segments: ['I have ', ['12'], ' cukes'],
       label: 'I have (\\d+) cukes',
       matched: true,
-      type:'when',
+      type: 'when',
     }
     const actual = buildSuggestionsFromRegularExpression(expression, registry, ['I have 4 cukes'], {
       '-?\\d+|\\d+': ['12'],
@@ -47,7 +47,7 @@ describe('buildSuggestionsFromRegularExpression', () => {
       segments: ['the price of a "', ['...'], '" is ', ['...'], 'c'],
       label: '^the price of a "(.*?)" is (\\d+)c$',
       matched: true,
-      type:'when',
+      type: 'when',
     }
     const actual = buildSuggestionsFromRegularExpression(
       expression,
