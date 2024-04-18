@@ -40,5 +40,6 @@ export function buildSuggestionsFromRegularExpression(
     segments: JSON.parse(s) as SuggestionSegment[],
     label: n == 0 ? expression.source : `${expression.source} (${n + 1})`,
     matched: true,
+    type: 'when'
   }))
 }
