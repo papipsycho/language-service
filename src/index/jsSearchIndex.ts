@@ -43,7 +43,7 @@ export function jsSearchIndex(suggestions: readonly Suggestion[]): Index {
         break
     }
   }
-  
+
   const searchWhen = new Search('when')
   searchWhen.addIndex('text')
   searchWhen.addDocuments(docsWhen)
@@ -61,13 +61,13 @@ export function jsSearchIndex(suggestions: readonly Suggestion[]): Index {
     let results: any[] = []
     const keyword = text.split(' ', 1)[0]
     switch (keyword.trim().toLowerCase()) {
-      case "when":
+      case 'when':
         results = searchWhen.search(text.substr(5))
         break
-      case "given":
+      case 'given':
         results = searchGiven.search(text.substr(6))
         break
-      case "then":
+      case 'then':
         results = searchThen.search(text.substr(5))
         break
     }
