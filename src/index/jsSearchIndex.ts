@@ -61,7 +61,7 @@ export function jsSearchIndex(suggestions: readonly Suggestion[]): Index {
 
   return (text: string) => {
     if (!text) return []
-    let results: Doc[] = Doc[]
+    let results: Doc[] = [] as Doc[];
     const keyword = text.split(' ', 1)[0]
     switch (keyword.trim().toLowerCase()) {
       case 'when':
