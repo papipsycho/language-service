@@ -68,6 +68,7 @@ describe('MessagesBuilder', () => {
         segments: ['I select the ', ['2nd'], ' snippet'],
         label: 'I select the {ordinal} snippet',
         matched: true,
+        type: 'when'
       },
       {
         segments: [
@@ -76,16 +77,19 @@ describe('MessagesBuilder', () => {
         ],
         label: 'I type {string}',
         matched: true,
+        type: 'when'
       },
       {
         segments: ['the following Gherkin step texts exist:'],
         label: 'the following Gherkin step texts exist:',
         matched: true,
+        type: 'when'
       },
       {
         segments: ['the following Step Definitions exist:'],
         label: 'the following Step Definitions exist:',
         matched: true,
+        type: 'when'
       },
       {
         segments: [
@@ -94,16 +98,19 @@ describe('MessagesBuilder', () => {
         ],
         label: 'the LSP snippet should be {string}',
         matched: true,
+        type: 'when'
       },
       {
         segments: ['the suggestions should be empty'],
         label: 'the suggestions should be empty',
         matched: true,
+        type: 'when'
       },
       {
         segments: ['the suggestions should be:'],
         label: 'the suggestions should be:',
         matched: true,
+        type: 'when'
       },
     ]
     assert.deepStrictEqual(result!.suggestions, expectedSuggestions)
