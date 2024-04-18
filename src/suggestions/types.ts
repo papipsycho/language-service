@@ -4,6 +4,9 @@ export type Suggestion = Readonly<{
    */
   label: string
 
+
+  type: string
+
   /**
    * The segments are used to build the contents that will be inserted into the editor
    * after selecting a suggestion.
