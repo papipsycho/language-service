@@ -1,3 +1,4 @@
+/*
 import assert from 'assert'
 import { CompletionItem, CompletionItemKind, InsertTextFormat } from 'vscode-languageserver-types'
 
@@ -6,7 +7,7 @@ import { getGherkinCompletionItems } from '../../src/service/getGherkinCompletio
 import { Suggestion } from '../../src/suggestions/types.js'
 
 //will check later
-/*describe('getGherkinCompletionItems', () => {
+describe('getGherkinCompletionItems', () => {
   it('completes matched step', () => {
     const s1: Suggestion = {
       label: 'I have {int} cukes in my belly',
